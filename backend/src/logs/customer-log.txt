@@ -1,0 +1,5 @@
+2026-11-03 08:13:58,042 INFO  customer-service - Customer profile lookup completed customer_id=CUST-***3812 request_id=REQ-74021
+2026-11-03 08:14:01,937 INFO  customer-service - Payment authorization confirmed customer_id=CUST-***3812 ref=PAY-10041
+2026-11-03 08:15:19,802 INFO  customer-service - Payment authorization confirmed customer_id=CUST-***6140 ref=PAY-10042
+2026-11-03 09:02:11,774 WARN  customer-service - Payment request rejected after balance validation ref=PAY-10043 error_code=INSUFFICIENT_FUNDS
+2026-11-03 09:45:57,401 INFO  customer-service - Payment authorization confirmed customer_id=CUST-***9275 ref=PAY-10044

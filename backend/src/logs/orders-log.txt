@@ -1,0 +1,6 @@
+2026-11-03 08:14:01,805 INFO  orders-service - Transfer order created order_id=ORD-82041 ref=PAY-10041 status=accepted
+2026-11-03 08:14:04,889 INFO  orders-service - Transfer order completed order_id=ORD-82041 ref=PAY-10041 status=success
+2026-11-03 08:15:20,102 INFO  orders-service - Transfer order created order_id=ORD-82042 ref=PAY-10042 status=accepted
+2026-11-03 08:15:28,191 ERROR orders-service - Transfer order marked failed order_id=ORD-82042 ref=PAY-10042 error_code=GW_TIMEOUT
+2026-11-03 09:02:12,011 ERROR orders-service - Transfer order marked failed order_id=ORD-82043 ref=PAY-10043 error_code=INSUFFICIENT_FUNDS
+2026-11-03 09:46:01,699 ERROR orders-service - Transfer order marked failed order_id=ORD-82044 ref=PAY-10044 error_code=INVALID_ACCOUNT_NUMBER

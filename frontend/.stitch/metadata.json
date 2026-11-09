@@ -1,0 +1,18 @@
+{
+  "projectId": "3230980990328221767",
+  "title": "Support Agent",
+  "designSystem": {
+    "assetId": "bb16275669fa48b8983ef4b59d68a855",
+    "displayName": "Clear Sky",
+    "primary": "#0052CC",
+    "secondary": "#172B4D",
+    "tertiary": "#00B8D9",
+    "neutral": "#F4F5F7",
+    "headlineFont": "Plus Jakarta Sans",
+    "bodyFont": "Inter"
+  },
+  "screens": [
+    { "id": "ac60605dea8a4369b757517a2dbd1513", "title": "Support Agent — Minimal Empty State (No Header)", "current": true },
+    { "id": "37555b092837434bbc1837f2cd4e688b", "title": "Support Agent — Minimal Active Conversation (No Header)", "current": true }
+  ]
+}

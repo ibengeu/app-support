@@ -1,0 +1,6 @@
+2026-11-03 08:14:02,181 INFO  account-service - Account validation started ref=PAY-10041
+2026-11-03 08:14:02,391 INFO  account-service - Source account active ref=PAY-10041 account_id=ACCT-***1042
+2026-11-03 08:14:02,422 INFO  account-service - Available balance check passed ref=PAY-10041
+2026-11-03 08:15:20,611 INFO  account-service - Beneficiary account lookup started ref=PAY-10042
+2026-11-03 08:15:22,451 WARN  account-service - Beneficiary account lookup slow ref=PAY-10042 elapsed_ms=1840
+2026-11-03 09:45:58,973 ERROR account-service - Beneficiary account validation failed ref=PAY-10044 error_code=INVALID_ACCOUNT_NUMBER

@@ -1,0 +1,7 @@
+2026-11-03 08:14:03,038 INFO  transfer-service - Transfer dispatched to payment gateway ref=PAY-10041
+2026-11-03 08:14:04,744 INFO  transfer-service - Gateway acknowledged transfer ref=PAY-10041 gateway_status=SUCCESS
+2026-11-03 08:15:23,409 WARN  transfer-service - Gateway response timed out ref=PAY-10042 attempt=1
+2026-11-03 08:15:25,897 WARN  transfer-service - Gateway response timed out ref=PAY-10042 attempt=2
+2026-11-03 08:15:28,019 ERROR transfer-service - Transfer failed after gateway timeouts ref=PAY-10042 error_code=GW_TIMEOUT
+2026-11-03 09:45:58,142 INFO  transfer-service - Transfer dispatched to payment gateway ref=PAY-10044
+2026-11-03 09:46:01,561 ERROR transfer-service - Gateway rejected transfer ref=PAY-10044 error_code=INVALID_ACCOUNT_NUMBER

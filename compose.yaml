@@ -1,0 +1,87 @@
+services:
+  agentos-api:
+    image: job-application-agentos-api:latest
+    build:
+      context: ./backend
+    restart: unless-stopped
+    environment:
+      AGENTOS_ADMIN_EMAIL: ${AGENTOS_ADMIN_EMAIL:?set AGENTOS_ADMIN_EMAIL}
+      AGENTOS_ADMIN_PASSWORD: ${AGENTOS_ADMIN_PASSWORD:?set AGENTOS_ADMIN_PASSWORD}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      AGENTOS_MODEL: ${AGENTOS_MODEL:-gpt-6-astra}
+      AGENTOS_FIXTURE_TOKEN: ${AGENTOS_FIXTURE_TOKEN:-}
+    depends_on:
+      approval-fixture:
+        condition: service_healthy
+    networks:
+      - default
+      - approval-fixture
+    ports:
+      - "127.0.0.1:${AGENTOS_PORT:-8787}:8787"
+    volumes:
+      - agentos-data:/data
+    read_only: true
+    tmpfs:
+      - /tmp:size=32m,noexec,nosuid
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    pids_limit: 96
+    mem_limit: 512m
+
+  approval-fixture:
+    image: job-application-agentos-api:latest
+    build:
+      context: ./backend
+    command: ["python", "-m", "agentos.approval_fixture"]
+    restart: unless-stopped
+    environment:
+      AGENTOS_DATABASE: /data/fixture.sqlite3
+      AGENTOS_FIXTURE_TOKEN: ${AGENTOS_FIXTURE_TOKEN:-}
+    networks:
+      - approval-fixture
+    volumes:
+      - agentos-fixture-data:/data
+    read_only: true
+    tmpfs:
+      - /tmp:size=16m,noexec,nosuid
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    pids_limit: 48
+    mem_limit: 128m
+    healthcheck:
+      test: ["CMD", "python", "-c", "from urllib.request import urlopen; urlopen('http://127.0.0.1:8791/health', timeout=2)"]
+      interval: 10s
+      timeout: 3s
+      retries: 3
+
+  isolation-probe:
+    profiles: ["isolation"]
+    image: job-application-agentos-api:latest
+    command: ["python", "-m", "agentos.isolation_probe"]
+    network_mode: none
+    read_only: true
+    user: "10001:10001"
+    tmpfs:
+      - /tmp:size=16m,noexec,nosuid
+      - /data:size=1m,noexec,nosuid,uid=10001,gid=10001,mode=0700
+      - /workspace:size=16m,noexec,nosuid,uid=10001,gid=10001,mode=0700
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    pids_limit: 32
+    mem_limit: 128m
+    healthcheck:
+      disable: true
+
+networks:
+  approval-fixture:
+    internal: true
+
+volumes:
+  agentos-data:
+  agentos-fixture-data:

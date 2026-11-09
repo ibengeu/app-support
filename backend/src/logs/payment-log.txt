@@ -1,0 +1,18 @@
+2026-11-03 08:14:02,118 INFO  payment-service - Received payment request ref=PAY-10041 amount=25000.00 currency=NGN
+2026-11-03 08:14:02,256 INFO  payment-service - Validating beneficiary account ref=PAY-10041
+2026-11-03 08:14:02,498 INFO  payment-service - Balance check passed ref=PAY-10041
+2026-11-03 08:14:03,012 INFO  payment-service - Payment submitted to gateway ref=PAY-10041
+2026-11-03 08:14:04,771 INFO  payment-service - Gateway confirmed payment ref=PAY-10041 status=SUCCESS
+2026-11-03 08:15:20,334 INFO  payment-service - Received payment request ref=PAY-10042 amount=150000.00 currency=NGN
+2026-11-03 08:15:20,590 INFO  payment-service - Validating beneficiary account ref=PAY-10042
+2026-11-03 08:15:21,102 WARN  payment-service - Beneficiary account lookup slow ref=PAY-10042 elapsed_ms=1840
+2026-11-03 08:15:23,415 ERROR payment-service - Gateway timeout ref=PAY-10042 error_code=GW_TIMEOUT retry=1
+2026-11-03 08:15:25,902 ERROR payment-service - Gateway timeout ref=PAY-10042 error_code=GW_TIMEOUT retry=2
+2026-11-03 08:15:28,044 ERROR payment-service - Payment failed ref=PAY-10042 status=FAILURE error_code=GW_TIMEOUT
+2026-11-03 09:02:11,630 INFO  payment-service - Received payment request ref=PAY-10043 amount=5000.00 currency=NGN
+2026-11-03 09:02:11,871 ERROR payment-service - Insufficient funds ref=PAY-10043 error_code=INSUFFICIENT_FUNDS
+2026-11-03 09:02:11,905 ERROR payment-service - Payment failed ref=PAY-10043 status=FAILURE error_code=INSUFFICIENT_FUNDS
+2026-11-03 09:45:57,207 INFO  payment-service - Received payment request ref=PAY-10044 amount=75000.00 currency=NGN
+2026-11-03 09:45:58,118 INFO  payment-service - Payment submitted to gateway ref=PAY-10044
+2026-11-03 09:46:01,560 ERROR payment-service - Gateway rejected payment ref=PAY-10044 error_code=INVALID_ACCOUNT_NUMBER
+2026-11-03 09:46:01,588 ERROR payment-service - Payment failed ref=PAY-10044 status=FAILURE error_code=INVALID_ACCOUNT_NUMBER

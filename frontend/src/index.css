@@ -1,0 +1,184 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+/* Streamdown (agent Markdown) ships Tailwind classes; scan it so they are generated. */
+@source "../node_modules/streamdown/dist/*.js";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+    --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+    --font-display: "Plus Jakarta Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+    --color-primary-hover: var(--primary-hover);
+    --color-sky: var(--sky);
+    --color-teal: var(--teal);
+    --color-teal-text: var(--teal-text);
+    --color-destructive-surface: var(--destructive-surface);
+    --color-destructive-text: var(--destructive-text);
+    --radius-sm: calc(var(--radius) * 0.6);
+    --radius-md: calc(var(--radius) * 0.8);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) * 1.4);
+    --radius-2xl: calc(var(--radius) * 1.8);
+    --radius-3xl: calc(var(--radius) * 2.2);
+    --radius-4xl: calc(var(--radius) * 2.6);
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-destructive: var(--destructive);
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+    --color-chart-1: var(--chart-1);
+    --color-chart-2: var(--chart-2);
+    --color-chart-3: var(--chart-3);
+    --color-chart-4: var(--chart-4);
+    --color-chart-5: var(--chart-5);
+    --color-sidebar: var(--sidebar);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+    /* Clear Sky design system (see .stitch/DESIGN.md) */
+    --radius: 0.75rem;
+    --background: #FAFBFC;
+    --foreground: #172B4D;
+    --card: #FFFFFF;
+    --card-foreground: #172B4D;
+    --popover: #FFFFFF;
+    --popover-foreground: #172B4D;
+    --primary: #0052CC;
+    --primary-foreground: #FFFFFF;
+    --primary-hover: #0747A6;
+    --secondary: #EBECF0;
+    --secondary-foreground: #172B4D;
+    --muted: #F4F5F7;
+    --muted-foreground: #5E6C84;
+    --accent: #DEEBFF;
+    --accent-foreground: #0747A6;
+    --destructive: #DE350B;
+    --destructive-surface: #FFEBE6;
+    --destructive-text: #BF2600;
+    --border: #DFE1E6;
+    --input: #DFE1E6;
+    --ring: #0052CC;
+    --sky: #4C9AFF;
+    --teal: #00B8D9;
+    --teal-text: #00788F;
+    --chart-1: #0052CC;
+    --chart-2: #4C9AFF;
+    --chart-3: #00B8D9;
+    --chart-4: #172B4D;
+    --chart-5: #97A0AF;
+    --sidebar: #FAFBFC;
+    --sidebar-foreground: #172B4D;
+    --sidebar-primary: #0052CC;
+    --sidebar-primary-foreground: #FFFFFF;
+    --sidebar-accent: #DEEBFF;
+    --sidebar-accent-foreground: #0747A6;
+    --sidebar-border: #DFE1E6;
+    --sidebar-ring: #0052CC;
+}
+
+.dark {
+    --background: oklch(0.145 0 0);
+    --foreground: oklch(0.985 0 0);
+    --card: oklch(0.205 0 0);
+    --card-foreground: oklch(0.985 0 0);
+    --popover: oklch(0.205 0 0);
+    --popover-foreground: oklch(0.985 0 0);
+    --primary: oklch(0.922 0 0);
+    --primary-foreground: oklch(0.205 0 0);
+    --secondary: oklch(0.269 0 0);
+    --secondary-foreground: oklch(0.985 0 0);
+    --muted: oklch(0.269 0 0);
+    --muted-foreground: oklch(0.708 0 0);
+    --accent: oklch(0.269 0 0);
+    --accent-foreground: oklch(0.985 0 0);
+    --destructive: oklch(0.704 0.191 22.216);
+    --border: oklch(1 0 0 / 10%);
+    --input: oklch(1 0 0 / 15%);
+    --ring: oklch(0.556 0 0);
+    --chart-1: oklch(0.87 0 0);
+    --chart-2: oklch(0.556 0 0);
+    --chart-3: oklch(0.439 0 0);
+    --chart-4: oklch(0.371 0 0);
+    --chart-5: oklch(0.269 0 0);
+    --sidebar: oklch(0.205 0 0);
+    --sidebar-foreground: oklch(0.985 0 0);
+    --sidebar-primary: oklch(0.488 0.243 264.376);
+    --sidebar-primary-foreground: oklch(0.985 0 0);
+    --sidebar-accent: oklch(0.269 0 0);
+    --sidebar-accent-foreground: oklch(0.985 0 0);
+    --sidebar-border: oklch(1 0 0 / 10%);
+    --sidebar-ring: oklch(0.556 0 0);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+    }
+  body {
+    @apply bg-background font-sans text-foreground antialiased;
+    caret-color: var(--primary);
+    }
+  ::selection {
+    background-color: var(--accent);
+    color: var(--accent-foreground);
+  }
+  /* Thin, palette-coloured scrollbars instead of the browser default. */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) transparent;
+  }
+  table {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Slow drift for the background orbs. Off when the user asks for less motion. */
+@keyframes orb-drift {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(-3%, 4%, 0) scale(1.06); }
+}
+
+.orb {
+  animation: orb-drift 28s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .orb { animation: none; }
+}
+
+/* One short entrance for each new message. */
+@keyframes message-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: none; }
+}
+
+.message-in {
+  animation: message-in 260ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .message-in { animation: none; }
+}
