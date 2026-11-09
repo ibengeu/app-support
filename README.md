@@ -68,8 +68,10 @@ FastAPI server (:8000)  ──►  LangChain agent  ──►  OpenRouter model
 
 2. Add your key to a `.env` file. `python-dotenv` searches upward from `backend/src/agent.py`, so `backend/src/.env`, `backend/.env`, or the repository root `.env` all work.
 
+   Copy the example to the repository root, then set `OPENROUTER_API_KEY` in it:
+
    ```sh
-   echo 'OPENROUTER_API_KEY=your-key' > .env
+   cp ../.env.example ../.env
    ```
 
 3. Start the API from `backend/src`. The tools read `logs/` and `articles/` relative to this folder.
@@ -145,8 +147,6 @@ frontend/
   src/components/         shadcn/ui and AI Elements components
   vite.config.ts          Dev server and /api proxy
 ```
-
-`android/`, `compose.yaml`, and `docs/` belong to an earlier, unrelated prototype (AgentOS). The support assistant does not use them.
 
 ## API
 

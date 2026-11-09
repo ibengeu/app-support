@@ -1,18 +1,11 @@
 **/__pycache__/
 **/.pytest_cache/
 **/build/
-**/.gradle/
-backend/data/
-local.properties
-*.iml
-*.apk
-*.aab
 
-# Local credentials and runtime data
+# Local credentials
 .env
 .env.*
 !.env.example
-/backend/data/
 
 # Environments, dependencies, and editor files
 .venv/

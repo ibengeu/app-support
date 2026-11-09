@@ -1,4 +1,0 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
-    <!-- OWASP A04: allow local emulator HTTP only in debug builds for a private development API. -->
-    <application android:usesCleartextTraffic="true" />
-</manifest>
